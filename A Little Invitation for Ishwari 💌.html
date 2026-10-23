@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Little Invitation for Ishwari 💌</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe3ee;--bg2:#ffd0e3;--card:#fff9fb;--ink:#5a2a45;--soft:#a35a7f;--pink:#ff5c9a;--pink2:#ff8fb8;--gold:#c9973f;--shadow:rgba(255,92,154,.25);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a1020;--bg2:#3d1630;--card:#4a1d3a;--ink:#ffe6f1;--soft:#ffb3d1;--pink:#ff6fa8;--pink2:#ff9cc3;--gold:#e8c27a;--shadow:rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg1:#2a1020;--bg2:#3d1630;--card:#4a1d3a;--ink:#ffe6f1;--soft:#ffb3d1;--pink:#ff6fa8;--pink2:#ff9cc3;--gold:#e8c27a;--shadow:rgba(0,0,0,.4)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--ink);font-family:'Quicksand',system-ui,sans-serif;overflow-x:hidden;display:flex;justify-content:center}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+#hearts span{position:absolute;bottom:-40px;animation:rise linear forwards;opacity:.7}
+@keyframes rise{to{transform:translateY(-110vh) rotate(40deg);opacity:0}}
+#app{position:relative;z-index:1;width:100%;max-width:520px;padding:24px 18px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh}
+.scene{width:100%;animation:pop .6s ease both;text-align:center}
+@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
+h1,h2{font-family:'Dancing Script',cursive;color:var(--pink);margin:.2em 0}
+h1{font-size:2.6rem}h2{font-size:2.1rem}
+.btn{font:600 1rem 'Quicksand',sans-serif;border:0;border-radius:999px;padding:13px 26px;color:#fff;background:linear-gradient(135deg,var(--pink),var(--pink2));box-shadow:0 8px 20px var(--shadow);cursor:pointer;transition:transform .2s;margin:8px 4px}
+.btn:active{transform:scale(.95)}
+.btn.ghost{background:var(--card);color:var(--pink);box-shadow:0 4px 12px var(--shadow)}
+.card{background:var(--card);border-radius:24px;padding:26px 22px;box-shadow:0 14px 34px var(--shadow);text-align:left;line-height:1.7;font-size:1.05rem;min-height:200px;position:relative}
+.card p{margin:0 0 14px;animation:pop .5s ease both}
+.card .sig{font-family:'Dancing Script',cursive;font-size:1.6rem;color:var(--pink);text-align:right}
+.card.formal{font-family:'Cormorant Garamond',serif;font-size:1.2rem;border:2px solid var(--gold);outline:6px solid var(--card);outline-offset:-12px}
+.seal{width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ff7aa8,#c2185b);color:#fff;display:grid;place-items:center;font-size:1.8rem;margin:-58px auto 14px;box-shadow:0 6px 14px var(--shadow)}
+.tag{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:10px}
+.env{font-size:7rem;cursor:pointer;animation:bob 2s ease-in-out infinite;display:inline-block;user-select:none}
+@keyframes bob{50%{transform:translateY(-12px) rotate(4deg)}}
+.hint{color:var(--soft);font-size:.9rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.tile{background:var(--card);border-radius:20px;padding:18px 10px;box-shadow:0 8px 20px var(--shadow);cursor:pointer;min-height:130px;display:flex;flex-direction:column;justify-content:center;align-items:center;transition:transform .25s}
+.tile:active{transform:scale(.96)}
+.tile .em{font-size:2.4rem}.tile b{color:var(--pink)}
+.tile small{display:block;color:var(--ink);margin-top:6px;line-height:1.4}
+.tile.open{outline:2px solid var(--pink)}
+.row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:10px 0}
+.chip{border:2px solid var(--pink2);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;cursor:pointer;font:600 .9rem 'Quicksand',sans-serif}
+.chip.on{background:var(--pink);color:#fff;border-color:var(--pink)}
+input[type=date],input[type=time]{font:600 1rem 'Quicksand',sans-serif;padding:10px;border-radius:14px;border:2px solid var(--pink2);background:var(--card);color:var(--ink);margin:4px}
+textarea{width:100%;min-height:110px;border-radius:16px;border:2px solid var(--pink2);background:var(--card);color:var(--ink);padding:12px;font:500 .95rem 'Quicksand',sans-serif}
+#conf{position:fixed;inset:0;pointer-events:none;z-index:5}
+#theme{position:fixed;top:calc(env(safe-area-inset-top,0px) + 8px);right:10px;z-index:6;background:var(--card);border:0;border-radius:50%;width:38px;height:38px;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 10px var(--shadow)}
+#no{position:relative}
+</style>
+</head>
+<body>
+<div id="hearts"></div>
+<canvas id="conf"></canvas>
+<button id="theme" aria-label="Toggle theme">🌙</button>
+<div id="app"></div>
+<script>
+const app=document.getElementById('app');
+const heartfelt=[
+"Dearest Ishwari,",
+"I want to offer my sincerest and most heartfelt apology for the mistakes I have made in the past, and for any moment where my actions fell short of the love, patience, and respect you truly deserve.",
+"Looking back, I deeply regret the times I caused you hurt, and I take full responsibility for my shortcomings, with a genuine commitment to doing better for us.",
+"With your permission, I would love the opportunity to begin making things right by inviting you on a proper virtual date. I would be honored if we could both dress up for the occasion, share lunch together over a video call, watch a few movies, and simply take the time to talk openly and express our emotions without any distractions.",
+"More than anything, I want to dedicate uninterrupted, quality time to you and remind you just how much you mean to me. 💖"
+];
+const formal=[
+"Dear Ishwari,",
+"Please accept this as my formal and wholehearted apology for all of my past mistakes and the times I have let you down. You mean the world to me, and I am truly sorry for the moments where I failed to show up for you the way I should have.",
+"As a small step toward making amends, I would like to formally invite you to a virtual date with me. My hope is that we can treat it like a real outing: getting dressed up for each other, sitting down to have lunch together, watching movies, and creating a calm, honest space to share our feelings and talk from the heart.",
+"I would deeply cherish the chance to spend dedicated quality time with you and give you the undivided attention you deserve."
+];
+const plan=[
+["👗","Dress Up","We both look our absolute best, just like a real outing."],
+["🍝","Lunch Together","Same meal time, one video call, zero distractions."],
+["🎬","Movie Time","A few films, snacks ready, your pick comes first."],
+["💬","Heart to Heart","Open talks, honest feelings, all my attention on you."]
+];
+let moods=new Set(),opened=new Set();
+function scene(html){app.innerHTML='<div class="scene">'+html+'</div>';return app.firstChild}
+function typeInto(el,text,done){let i=0;el.textContent='';const t=setInterval(()=>{el.textContent=text.slice(0,++i);if(i>=text.length){clearInterval(t);done&&done()}},16);el._skip=()=>{clearInterval(t);el.textContent=text;done&&done()}}
+function s0(){const s=scene('<h1>Psst… Ishwari 💗</h1><div class="env" id="e">💌</div><p class="hint">Tap the envelope. It has something for you.</p>');s.querySelector('#e').onclick=()=>{burst(18);s1()}}
+function letter(chunks,formalStyle,next,nextLabel){
+ const s=scene((formalStyle?'<div class="tag">✦ Official Invitation ✦</div>':'')+'<div class="card'+(formalStyle?' formal':'')+'" id="c">'+(formalStyle?'<div class="seal">💝</div>':'')+'</div><button class="btn" id="n">Continue ✨</button><p class="hint" id="h">Tap to reveal one line at a time</p>');
+ const c=s.querySelector('#c'),b=s.querySelector('#n');let i=0,busy=false,cur=null;
+ function show(){if(i>=chunks.length){c.insertAdjacentHTML('beforeend','<div class="sig">— Yours, always 🌹</div>');b.textContent=nextLabel;b.onclick=next;s.querySelector('#h').textContent='';return}
+  const p=document.createElement('p');c.appendChild(p);busy=true;cur=p;typeInto(p,chunks[i++],()=>{busy=false;cur=null})}
+ b.onclick=()=>{if(busy){cur._skip();return}show()};show();
+}
+function s1(){letter(heartfelt,false,s2,'Read the official invitation 📜')}
+function s2(){letter(formal,true,s3,'See what I planned 🎀')}
+function s3(){
+ const s=scene('<h2>Our Virtual Date Plan</h2><p class="hint">Tap each card 💕</p><div class="grid">'+plan.map((p,i)=>'<div class="tile" data-i="'+i+'"><div class="em">'+p[0]+'</div><b>'+p[1]+'</b><small></small></div>').join('')+'</div><button class="btn" id="go">I have one question… 🥺</button>');
+ s.querySelectorAll('.tile').forEach(t=>t.onclick=()=>{const i=t.dataset.i;t.classList.add('open');t.querySelector('small').textContent=plan[i][2];opened.add(i);burst(4,t)});
+ s.querySelector('#go').onclick=s4;
+}
+function s4(){
+ const s=scene('<div style="font-size:5rem">🥹</div><h1>Will you forgive me &amp; go on a date with me?</h1><p class="hint">I promise to do better, starting today.</p><div style="min-height:120px"><button class="btn" id="yes" style="font-size:1.2rem">Yes, I will 💖</button><button class="btn ghost" id="no">No…</button></div>');
+ const no=s.querySelector('#no'),yes=s.querySelector('#yes');let n=0;
+ const labels=['Are you sure?','Pleaseee 🥺','Think again…','I’ll bring snacks!','Don’t do this to me 😭','Just say yes 💕'];
+ function dodge(e){e.preventDefault();no.textContent=labels[n%labels.length];n++;const k=1+n*.12;yes.style.transform='scale('+Math.min(k,1.8)+')';yes.style.margin=(8+n*3)+'px';no.style.left=(Math.random()*80-40)+'px';no.style.top=(Math.random()*60-30)+'px'}
+ no.onmouseenter=dodge;no.ontouchstart=dodge;no.onclick=dodge;
+ yes.onclick=s5;
+}
+function s5(){
+ burst(60);
+ const moodList=['Romantic 💞','Comedy 😂','Cozy Classic 🍿','Animated ✨'];
+ const s=scene('<div style="font-size:5rem">🎉</div><h1>She said yes!</h1><p>Thank you, Ishwari. You just made my whole world brighter. Let’s plan our day:</p><div><input type="date" id="d"><input type="time" id="t" value="13:00"></div><p class="hint">Movie mood (pick any)</p><div class="row">'+moodList.map(m=>'<button class="chip">'+m+'</button>').join('')+'</div><button class="btn" id="mk">Make my reply 💌</button><div id="out"></div>');
+ s.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{c.classList.toggle('on');moods.has(c.textContent)?moods.delete(c.textContent):moods.add(c.textContent)});
+ s.querySelector('#mk').onclick=()=>{
+  const d=s.querySelector('#d').value||'a day you choose',t=s.querySelector('#t').value;
+  const msg='Yes 💖 I forgive you and I accept your invitation! Our virtual date: '+d+' at '+t+'. Movie mood: '+([...moods].join(', ')||'surprise me')+'. Dress up, I’m watching you! 😘';
+  const o=s.querySelector('#out');o.innerHTML='<textarea readonly id="ta"></textarea><button class="btn" id="cp">Copy</button><button class="btn ghost" id="sh">Share</button>';
+  const ta=o.querySelector('#ta');ta.value=msg;
+  o.querySelector('#cp').onclick=e=>{ta.select();try{navigator.clipboard.writeText(msg)}catch(_){try{document.execCommand('copy')}catch(__){}}e.target.textContent='Copied ✓'};
+  o.querySelector('#sh').onclick=()=>{if(navigator.share)navigator.share({text:msg}).catch(()=>{});else{ta.select()}};
+  burst(30);
+ };
+}
+// floating hearts
+const hb=document.getElementById('hearts'),em=['💗','💖','💕','🌸','✨','🩷'];
+setInterval(()=>{const s=document.createElement('span');s.textContent=em[Math.floor(Math.random()*em.length)];s.style.left=Math.random()*100+'vw';s.style.fontSize=(14+Math.random()*22)+'px';s.style.animationDuration=(6+Math.random()*6)+'s';hb.appendChild(s);setTimeout(()=>s.remove(),12000)},500);
+// confetti
+const cv=document.getElementById('conf'),cx=cv.getContext('2d');let P=[],run=false;
+function size(){cv.width=innerWidth;cv.height=innerHeight}size();addEventListener('resize',size);
+function burst(n,el){const r=el?el.getBoundingClientRect():null;const x=r?r.left+r.width/2:innerWidth/2,y=r?r.top+r.height/2:innerHeight/2.5;
+ for(let i=0;i<n;i++)P.push({x,y,vx:(Math.random()-.5)*10,vy:Math.random()*-10-2,e:em[Math.floor(Math.random()*em.length)],l:90+Math.random()*40});
+ if(!run){run=true;requestAnimationFrame(tick)}}
+function tick(){cx.clearRect(0,0,cv.width,cv.height);cx.font='22px serif';P=P.filter(p=>p.l-->0);P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.3;cx.globalAlpha=Math.min(1,p.l/30);cx.fillText(p.e,p.x,p.y)});if(P.length)requestAnimationFrame(tick);else run=false}
+// theme
+document.getElementById('theme').onclick=()=>{const r=document.documentElement,d=r.dataset.theme==='dark'||(!r.dataset.theme&&matchMedia('(prefers-color-scheme:dark)').matches);r.dataset.theme=d?'light':'dark';document.getElementById('theme').textContent=d?'🌙':'☀️'};
+s0();
+</script>
+</body>
+</html>
